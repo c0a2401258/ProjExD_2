@@ -15,7 +15,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 def check_bound(rct:pg.Rect) -> tuple[bool, bool]:
     """
-    引数：こうかとんRectかばくだんRect
+    引数：こうかとんRectか爆弾Rect
     戻り値：タプル（横方向判定結果、縦方向判定結果）
     画面内ならTrue,画面外ならFalse
     """
@@ -47,6 +47,9 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: 
                 return
+        if kk_rct.colliderect(bb_rct):  # こうかとんRectと爆弾Rectの衝突
+            print("ゲームオーバー")
+            return
         screen.blit(bg_img, [0, 0])
 
         key_lst = pg.key.get_pressed()
