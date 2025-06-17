@@ -14,6 +14,7 @@ DELTA = {  # 移動量辞書
     }
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
+
 def check_bound(rct:pg.Rect) -> tuple[bool, bool]:
     """
     引数：こうかとんRectか爆弾Rect
